@@ -3,7 +3,7 @@ import temperature
 import temperatureDatabase
 
 temperature = temperature.Temperature()
-listOfTemperatures = temperature.getListOfTemperatures(20, 0.001)
+listOfTemperatures = temperature.getListOfTemperatures(20, 5)
 
 db = temperatureDatabase.TemperatureDatabase('../misc/local.db')
 
