@@ -8,11 +8,12 @@ class TemperatureDatabase:
 
   def __init__(self, path_to_database):
     self.conn = sqlite3.connect(path_to_database)
-    self.c = self.conn.cursor()
+    self.cur = self.conn.cursor()
 
   def tableCreate(self, ):
-    self.c.execute("CREATE TABLE temperature(dateTime TEXT, celsiusTemperature TEXT, farenheitTemperature TEXT) ")
+    self.cur.execute("CREATE TABLE temperature(dateTime TEXT, celsiusTemperature TEXT, farenheitTemperature TEXT) ")
 
   def dataEntry(self, singleList):
-    self.c.execute("INSERT INTO temperature (dateTime, celsiusTemperature, farenheitTemperature) VALUES( ?, ?, ?)", (singleList[0], singleList[1], singleList[2]))
-    self.conn.commit()
+    with self.conn:
+      self.cur.execute("INSERT INTO temperature (dateTime, celsiusTemperature, farenheitTemperature) VALUES( ?, ?, ?)", (singleList[0], singleList[1], singleList[2]))
+      self.conn.commit()
