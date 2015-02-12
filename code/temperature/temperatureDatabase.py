@@ -17,3 +17,4 @@ class TemperatureDatabase:
     with self.conn:
       self.cur.execute("INSERT INTO temperature (dateTime, celsiusTemperature, farenheitTemperature) VALUES( ?, ?, ?)", (singleList[0], singleList[1], singleList[2]))
       self.conn.commit()
+      print("Temperature successfully recorded")
