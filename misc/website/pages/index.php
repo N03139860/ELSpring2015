@@ -29,6 +29,9 @@
     <!-- Custom Fonts -->
     <link href="../bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
+    <!-- datatables  -->
+    <link href="../css/jquery.dataTables.css" />
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -218,39 +221,46 @@
         <div class="row">
           <div class="col-lg-12">
             <div class="dataTable_wrapper">
-              <!-- <table class="table table-striped table-bordered table-hover" id="temperatureTable">
-              <thead>
-              <tr>
-              <th>Datetime</th>
-              <th>Temperature in Celsius</th>
-              <th>Temperature in Farenheit</th>
-              </tr>
-              </thead>
-              <tbody>
-              <tr class="odd gradeX" ng-repeat='row in data'>
-              <td>{{row[0]}}</td>
-              <td class="center">{{row[1]}}</td>
-              <td class="center">{{row[2]}}</td>
-              </tr>
-              </tbody>
-              </table> -->
-              <table id="example" class="display" cellspacing="0" width="100%">
+              <table id="temperatureTable" class="display" cellspacing="0" width="100%">
                 <thead>
                   <tr>
                     <th>Datetime</th>
-                    <th>Celsius</th>
-                    <th>Farenheit</th>
+                    <th>Temperature in Celsius</th>
+                    <th>Temperature in Farenheit</th>
                   </tr>
                 </thead>
-
                 <tfoot>
                   <tr>
                     <th>Datetime</th>
-                    <th>Celsius</th>
-                    <th>Farenheit</th>
+                    <th>Temperature in Celsius</th>
+                    <th>Temperature in Farenheit</th>
                   </tr>
                 </tfoot>
+                <tbody>
+                  <tr class="odd gradeX" ng-repeat='row in data'>
+                    <td>{{row[0]}}</td>
+                    <td class="center">{{row[1]}}</td>
+                    <td class="center">{{row[2]}}</td>
+                  </tr>
+                </tbody>
               </table>
+              <!-- <table id="example" class="display" cellspacing="0" width="100%">
+              <thead>
+              <tr>
+              <th>Datetime</th>
+              <th>Celsius</th>
+              <th>Farenheit</th>
+              </tr>
+              </thead>
+
+              <tfoot>
+              <tr>
+              <th>Datetime</th>
+              <th>Celsius</th>
+              <th>Farenheit</th>
+              </tr>
+              </tfoot>
+              </table> -->
             </div>
             <!-- /.table-responsive -->
           </div>
@@ -285,7 +295,7 @@
     <!-- Datatables -->
     <script src="//cdn.datatables.net/1.10.5/js/jquery.dataTables.min.js"></script>
 
-      <!-- SQLite  -->
+    <!-- SQLite  -->
     <script src="../js/sql.js"></script>
     <script src="../js/readSql.js"></script>
 

@@ -21,22 +21,26 @@ function($scope, $http, $templateCache) {
   $http.get('temperatures-db.php').success(function(data, status, headers, config) {
     $scope.data = data;
   }).error(function(data, status, headers, config) {
-    // log error
+    console.log("Some error ocurried while trying to get db contents from php.");
   });
 }]);
 
 $(document).ready(function() {
+    $('#temperatureTable').dataTable();
+} );
 
-  $('#demo').html('<table cellpadding="0" cellspacing="0" border="0" class="display" id="example"></table>');
-
-  $('#example').dataTable({
-    "data" : $dataSet,
-    "columns" : [{
-      "title" : "Datetime"
-    }, {
-      "title" : "Celsius"
-    }, {
-      "title" : "Farenheit"
-    }]
-  });
-});
+// $(document).ready(function() {
+//
+  // $('#demo').html('<table cellpadding="0" cellspacing="0" border="0" class="display" id="example"></table>');
+//
+  // $('#example').dataTable({
+    // "data" : $dataSet,
+    // "columns" : [{
+      // "title" : "Datetime"
+    // }, {
+      // "title" : "Celsius"
+    // }, {
+      // "title" : "Farenheit"
+    // }]
+  // });
+// });
