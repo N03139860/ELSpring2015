@@ -218,21 +218,38 @@
         <div class="row">
           <div class="col-lg-12">
             <div class="dataTable_wrapper">
-              <table class="table table-striped table-bordered table-hover" id="temperatureTable">
+              <!-- <table class="table table-striped table-bordered table-hover" id="temperatureTable">
+              <thead>
+              <tr>
+              <th>Datetime</th>
+              <th>Temperature in Celsius</th>
+              <th>Temperature in Farenheit</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr class="odd gradeX" ng-repeat='row in data'>
+              <td>{{row[0]}}</td>
+              <td class="center">{{row[1]}}</td>
+              <td class="center">{{row[2]}}</td>
+              </tr>
+              </tbody>
+              </table> -->
+              <table id="example" class="display" cellspacing="0" width="100%">
                 <thead>
                   <tr>
                     <th>Datetime</th>
-                    <th>Temperature in Celsius</th>
-                    <th>Temperature in Farenheit</th>
+                    <th>Celsius</th>
+                    <th>Farenheit</th>
                   </tr>
                 </thead>
-                <tbody>
-                  <tr class="odd gradeX" ng-repeat='row in data'>
-                    <td>{{row[0]}}</td>
-                    <td class="center">{{row[1]}}</td>
-                    <td class="center">{{row[2]}}</td>
+
+                <tfoot>
+                  <tr>
+                    <th>Datetime</th>
+                    <th>Celsius</th>
+                    <th>Farenheit</th>
                   </tr>
-                </tbody>
+                </tfoot>
               </table>
             </div>
             <!-- /.table-responsive -->
@@ -248,18 +265,15 @@
     </div>
     <!-- /#wrapper -->
 
-    <!-- SQLite  -->
-    <script src="../js/sql.js"></script>
-    <script src="../js/readSql.js"></script>
-
     <!-- jQuery -->
     <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="../js/jquery.binarytransport.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
     <!-- AngularJs  -->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.13/angular.min.js"></script>
 
     <!-- Metis Menu Plugin JavaScript -->
     <script src="../bower_components/metisMenu/dist/metisMenu.min.js"></script>
@@ -268,6 +282,13 @@
     <script src="../bower_components/raphael/raphael-min.js"></script>
     <script src="../bower_components/morrisjs/morris.min.js"></script>
     <script src="../js/morris-data.js"></script>
+
+    <!-- Datatables -->
+    <script src="//cdn.datatables.net/1.10.5/js/jquery.dataTables.min.js"></script>
+
+      <!-- SQLite  -->
+    <script src="../js/sql.js"></script>
+    <script src="../js/readSql.js"></script>
 
     <!-- Custom Theme JavaScript -->
     <script src="../dist/js/sb-admin-2.js"></script>

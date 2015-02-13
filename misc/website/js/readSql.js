@@ -1,19 +1,42 @@
-var xhr = new XMLHttpRequest();
-xhr.open('GET', '../../local.db', true);
-xhr.responseType = 'arraybuffer';
+// var xhr = new XMLHttpRequest();
+// xhr.open('GET', '../../local.db', true);
+// xhr.responseType = 'arraybuffer';
+//
+// var $dataSet = null;
+//
+// xhr.onload = function(e) {
+// dbCallback(this.response);
+// };
+// xhr.send();
+//
+// function dbCallback(response){
+// var uInt8Array = new Uint8Array(response);
+// var db = new SQL.Database(uInt8Array);
+// var contents = db.exec("SELECT * FROM temperature");
+// $dataSet = contents[0].values;
+// }
 
-var $data = null;
-
-xhr.onload = function(e) {
-  var uInt8Array = new Uint8Array(this.response);
-  var db = new SQL.Database(uInt8Array);
-  var contents = db.exec("SELECT * FROM temperature");
-  $data = contents[0].values;
-};
-xhr.send();
-
-var app = angular.module('app', [])
-  .controller('IndexController', ['$scope', function($scope) {
-  $scope.data = $data;
-
+var app = angular.module('app', []).controller('IndexController', ['$scope', '$http', '$templateCache',
+function($scope, $http, $templateCache) {
+  $http.get('temperatures-db.php').success(function(data, status, headers, config) {
+    $scope.data = data;
+  }).error(function(data, status, headers, config) {
+    // log error
+  });
 }]);
+
+$(document).ready(function() {
+
+  $('#demo').html('<table cellpadding="0" cellspacing="0" border="0" class="display" id="example"></table>');
+
+  $('#example').dataTable({
+    "data" : $dataSet,
+    "columns" : [{
+      "title" : "Datetime"
+    }, {
+      "title" : "Celsius"
+    }, {
+      "title" : "Farenheit"
+    }]
+  });
+});
