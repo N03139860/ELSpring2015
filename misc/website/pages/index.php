@@ -81,12 +81,12 @@
               <div class="panel-heading">
                 <div class="row">
                   <div class="col-xs-3">
-                    <i class="fa fa-comments fa-5x"></i>
+                    <i class="fa fa-cloud fa-5x"></i>
                   </div>
                   <div class="col-xs-9 text-right">
                     <div class="huge" ng-model='data'>
-                      {{data[data.length - 1][1]}} C
-                      <!-- {{data[data.length - 1][2]}} F -->
+                      <!-- {{data[data.length - 1][1]}} C -->
+                      {{data[data.length - 1][2]}} F
                     </div>
                     <div>
                       </a>
@@ -107,14 +107,11 @@
               <div class="panel-heading">
                 <div class="row">
                   <div class="col-xs-3">
-                    <i class="fa fa-tasks fa-5x"></i>
+                    <i class="fa fa-sort fa-5x"></i>
                   </div>
                   <div class="col-xs-9 text-right">
                     <div class="huge">
-                      12
-                    </div>
-                    <div>
-                      New Tasks!
+
                     </div>
                   </div>
                 </div>
@@ -132,14 +129,11 @@
               <div class="panel-heading">
                 <div class="row">
                   <div class="col-xs-3">
-                    <i class="fa fa-shopping-cart fa-5x"></i>
+                    <i class="fa fa-sort-desc fa-5x"></i>
                   </div>
                   <div class="col-xs-9 text-right">
                     <div class="huge">
-                      124
-                    </div>
-                    <div>
-                      New Orders!
+
                     </div>
                   </div>
                 </div>
@@ -157,14 +151,11 @@
               <div class="panel-heading">
                 <div class="row">
                   <div class="col-xs-3">
-                    <i class="fa fa-support fa-5x"></i>
+                    <i class="fa fa-sort-up fa-5x"></i>
                   </div>
                   <div class="col-xs-9 text-right">
                     <div class="huge">
-                      13
-                    </div>
-                    <div>
-                      Support Tickets!
+
                     </div>
                   </div>
                 </div>
@@ -221,7 +212,7 @@
         <div class="row">
           <div class="col-lg-12">
             <div class="dataTable_wrapper">
-              <table id="temperatureTable" class="display" cellspacing="0" width="100%">
+              <table id="#temperatureTable" class="table table-striped table-bordered table-hover">
                 <thead>
                   <tr>
                     <th>Datetime</th>
@@ -281,6 +272,9 @@
     <!-- Bootstrap Core JavaScript -->
     <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
+    <!-- Datatables -->
+    <script src="//cdn.datatables.net/1.10.5/js/jquery.dataTables.min.js"></script>
+
     <!-- AngularJs  -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.13/angular.min.js"></script>
 
@@ -292,8 +286,8 @@
     <script src="../bower_components/morrisjs/morris.min.js"></script>
     <script src="../js/morris-data.js"></script>
 
-    <!-- Datatables -->
-    <script src="//cdn.datatables.net/1.10.5/js/jquery.dataTables.min.js"></script>
+    <!--  angular datatables -->
+    <script src="../bower_components/angular-datatables/dist/angular-datatables.min.js"></script>
 
     <!-- SQLite  -->
     <script src="../js/sql.js"></script>
