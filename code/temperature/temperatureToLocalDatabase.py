@@ -1,11 +1,18 @@
 #!/usr/bin/python
 import temperature
 import temperatureDatabase
+import time
 
 temperature = temperature.Temperature()
-listOfTemperatures = temperature.getListOfTemperatures(20, 5)
-
 db = temperatureDatabase.TemperatureDatabase('../../misc/local.db')
 
-for list in listOfTemperatures:
-  db.dataEntry(list)
+while True:
+  try:
+    newMeasure = temperature.readTemp()
+    db.dataEntry(newMeasure)
+    print(newMeasure)
+    time.sleep(900)
+  except:
+    print("Some error ocurred while reading temperature.")
+    break
+
