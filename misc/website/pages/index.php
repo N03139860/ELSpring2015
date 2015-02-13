@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Bootstrap Admin Theme</title>
+    <title>Frederico Castro - Raspberry Pi</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -38,11 +38,19 @@
 
 </head>
 
-<body>
-<?php  
-        print('OIOI');
-?>
+<script>
+  var fs = require('fs');
+  var SQL = require('sql.js');
+  var filebuffer = fs.readFileSync('../../local.db');
 
+  // Load the db
+  var db = new SQL.Database(filebuffer);
+  console.log(db);
+
+
+</script>
+
+<body>
 
     <div id="wrapper">
 
@@ -55,7 +63,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">SB Admin v2.0</a>
+                <a class="navbar-brand" href="index.html">Frederico Castro - Raspberry Pi</a>
             </div>
             <!-- /.navbar-header -->
 
