@@ -85,8 +85,8 @@
                   </div>
                   <div class="col-xs-9 text-right">
                     <div class="huge" ng-model='data'>
-                      {{data[data.length - 1][1]}} C
-                      {{data[data.length - 1][2]}} F
+                      {{data[0][1]}} C
+                      {{data[0][2]}} F
                     </div>
                     <div>
                       </a>
@@ -228,7 +228,7 @@
                   </tr>
                 </tfoot>
                 <tbody>
-                  <tr class="odd gradeX" ng-repeat='row in data'>
+                  <tr class="odd gradeX" ng-repeat="row in data">
                     <td>{{row[0]}}</td>
                     <td class="center">{{row[1]}}</td>
                     <td class="center">{{row[2]}}</td>
@@ -290,7 +290,6 @@
     <script src="../bower_components/angular-datatables/dist/angular-datatables.min.js"></script>
 
     <!-- SQLite  -->
-    <script src="../js/sql.js"></script>
     <script src="../js/readSql.js"></script>
 
     <!-- Custom Theme JavaScript -->
