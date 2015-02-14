@@ -1,5 +1,8 @@
 #!/usr/bin/python
 import sqlite3
+import os
+
+dir_path = os.path.dirname(os.path.abspath(__file__))
 
 """ Log Current Time, Temperature in Celsius and Fahrenheit
     Prints a list [time, tempC, tempF] on a csv file """
@@ -7,7 +10,7 @@ import sqlite3
 class TemperatureDatabase:
 
   def __init__(self, path_to_database):
-    self.conn = sqlite3.connect(path_to_database)
+    self.conn = sqlite3.connect(os.path.join(dir_path, path_to_database))
     self.cur = self.conn.cursor()
 
   def tableCreate(self, ):
