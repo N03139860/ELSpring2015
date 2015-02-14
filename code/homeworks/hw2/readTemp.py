@@ -1,7 +1,6 @@
 #!/usr/bin/python
 import os
 import time
-import csv
 
 """ Log Current Time, Temperature in Celsius and Fahrenheit    
 Returns a list [time, tempC, tempF] """
@@ -17,4 +16,3 @@ class Temperature(object):
     tempF=tempC*9.0/5.0+32.0
     return [currentTime, tempC, tempF]
 
-print readTemp() 

@@ -85,7 +85,7 @@
                   </div>
                   <div class="col-xs-9 text-right">
                     <div class="huge" ng-model='data'>
-                      <!-- {{data[data.length - 1][1]}} C -->
+                      {{data[data.length - 1][1]}} C
                       {{data[data.length - 1][2]}} F
                     </div>
                     <div>

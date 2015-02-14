@@ -1,12 +1,10 @@
 #!/usr/bin/python
 
 import readTemp
-import TemperatureDatabase
+import temperatureDatabase
 
-temperature = temperature.Temperature()
-temperatureMeasurement = temperature.readTemp()
+temperature = readTemp.Temperature()
+newMeasurement = temperature.readTemp()
 
-db = temperatureDatabase.TemperatureDatabase('../../misc/local.db')
-
-db.dataEntry(temperatureMeasurement)
-
+db = temperatureDatabase.TemperatureDatabase('../../../misc/temperature.db')
+db.dataEntry(newMeasurement, 'TempData')

@@ -25,9 +25,9 @@ function($scope, $http, $templateCache) {
   });
 }]);
 
-$(document).ready(function() {
-    $('#temperatureTable').dataTable();
-} );
+// $(document).ready(function() {
+//     $('#temperatureTable').dataTable();
+// } );
 
 // $(document).ready(function() {
 //
