@@ -8,7 +8,7 @@ After that, I the file
 
 /etc/wpa_supplicant/wpa_supplicant.conf 
 
-was cinfigured as following:
+was configured as following:
 
 ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
 update_config=1
