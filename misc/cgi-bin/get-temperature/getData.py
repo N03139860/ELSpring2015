@@ -1,5 +1,7 @@
 #!/usr/bin/python
 
+# original code from http://raspberrywebserver.com/cgiscripting/rpi-temperature-logger/building-a-web-user-interface-for-the-temperature-monitor.html
+
 # get data from the database
 # if an interval in minutes (integer)  is passed,
 # return a list of records from the database for the last X minutes
@@ -29,5 +31,4 @@ def get_data(path_to_database, lastXMinutes):
   return rows
 
 
-# original code from http://raspberrywebserver.com/cgiscripting/rpi-temperature-logger/building-a-web-user-interface-for-the-temperature-monitor.html
 
