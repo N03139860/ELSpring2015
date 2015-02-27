@@ -13,7 +13,10 @@ dbname='/../../local.db'
 
 # print the HTTP header
 def printHTTPheader():
-    print "Content-type: text/html\n\n"
+    print   """
+            <!DOCTYPE html>\n\n
+           
+            """
 
 
 # print the HTML head section
@@ -23,6 +26,16 @@ def printHTMLHead(title, table):
     print "    <title>"
     print title
     print "    </title>"
+    print """
+        <!-- Latest compiled and minified CSS -->\n
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">\n
+
+        <!-- Optional theme -->\n
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">\n
+
+        <!-- Latest compiled and minified JavaScript -->\n
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>\n\n
+        """
     
     print_graph_script(table)
 
@@ -73,19 +86,28 @@ def print_graph_script(table):
 
 # print the div that contains the graph
 def show_graph():
-    print "<h2>Temperature Chart</h2>"
-    print '<div id="chart_div" style="width: 900px; height: 500px;"></div>'
+    
+    print '<div id="chart_div" style="width: 100%; height: 500px;"></div>'
 
 
 
 
 def print_time_form():
 
-    print """<form action="/cgi-bin/get-temperature/getTemperature.py" method="GET">
-        Time(int)  
-        <input type="text" name="timeinterval">
-        <input type="submit" value="Go Get It">
+    print """
+        <div class='row'>
+        <div class='pull-right'>
+        <div class="form-inline">
+        <div class="form-group">
+        <form action="/cgi-bin/get-temperature/getTemperature.py" method="GET">
+        <label for="time">Time (int) </label> 
+        <input type="text" name="timeinterval" class="form-control" placeholder="Insert the interval">
         </form>
+        </div>
+        <button type="submit" value="Go Get It" class="btn btn-success">Go Get It!</button>
+        </div>
+        </div>
+        </div>
         """
 
 # check that the option is valid
@@ -140,17 +162,49 @@ def main():
         return
 
     # start printing the page
-    print "<html>"
+    print """
+        <html lang="en">\n\n
+        
+        """
     # print the head section including the table
     # used by the javascript for the chart
     printHTMLHead("Raspberry Pi Temperature Logger", table)
 
     # print the page body
     print "<body>"
-    print "<h1>Raspberry Pi Temperature Logger</h1>"
+   
+    print ""
+    print """
+            <nav class="navbar navbar-inverse navbar-fixed-top">
+              <div class="container">
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                  <a class="navbar-brand" href="#">Raspberry Pi Temperature Logger - Frederico Castro</a>
+                </div>
+              </div>
+            </nav>
+    """
+    print """
+            <div class='container'>
+            """
     print "<hr>"
+    
+    print """ 
+    <hr>
+    <div class='row'>
+    <h2 style='margin-top:20px;'>Temperature Chart</h2>
+    </div>
+    <hr>
+    """
     print_time_form()
     show_graph()
+    print """
+            </div>"""
     print "</body>"
     print "</html>"
 
