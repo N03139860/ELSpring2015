@@ -32,9 +32,6 @@ def printHTMLHead(title, table):
 
         <!-- Optional theme -->\n
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">\n
-
-        <!-- Latest compiled and minified JavaScript -->\n
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>\n\n
         """
     
     print_graph_script(table)
@@ -72,7 +69,11 @@ def print_graph_script(table):
 %s
         ]);
         var options = {
-          title: 'Temperature'
+            title: 'Temperature',
+            curveType: 'function',
+            vAxis:{"title":"Temperature(Celsius)"},
+            hAxis:{"title":"Date and Time"},
+            legend:"none"
         };
         var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
         chart.draw(data, options);
