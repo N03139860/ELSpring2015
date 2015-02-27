@@ -117,7 +117,7 @@ def validate_input(input_str):
     # check that the option string represents a number
     if input_str.isalnum():
         # check that the option is within a specific range
-        if int(input_str) > 0 and int(input_str) <= 500:
+        if int(input_str) > 0 and int(input_str) <= 500
             return input_str
         else:
             return None
