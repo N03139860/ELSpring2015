@@ -19,7 +19,7 @@ def get_data(path_to_database, lastXMinutes):
     cur.execute("SELECT * FROM temperature DESC LIMIT 300")
   else:
     # cur.execute("SELECT * FROM temperature WHERE datetime(dateTime)>datetime('now','-%s minutes')" % lastXMinutes)
-    cur.execute("SELECT * FROM temperature ORDER BY dateTime  DESC LIMIT ?",  (str(lastXMinutes/5),))
+    cur.execute("SELECT * FROM (SELECT * FROM temperature ORDER BY dateTime  DESC LIMIT ?) ORDER BY dateTime",  (str(lastXMinutes/5),))
 
 
   rows=cur.fetchall()

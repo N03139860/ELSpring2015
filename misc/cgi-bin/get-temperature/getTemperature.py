@@ -84,7 +84,7 @@ def print_time_form():
     print """<form action="/cgi-bin/get-temperature/getTemperature.py" method="GET">
         Time(int)  
         <input type="text" name="timeinterval">
-        <input type="submit" value="Display">
+        <input type="submit" value="Go Get It">
         </form>
         """
 
